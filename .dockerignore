@@ -1,0 +1,10 @@
+*
+
+!app.js
+!README.md
+!package.json
+
+!views/*
+!config/*
+!routes/*
+!public/*

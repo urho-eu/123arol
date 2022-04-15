@@ -1,0 +1,18 @@
+extends layout
+
+block content
+
+  h1.
+    123arol Device Checker
+
+  div(class='hint').
+    Type in a Device EUI and hit enter.
+
+  form(method='POST' action='/check')
+
+    div.main
+
+      h3.
+        Device EUI
+
+      input.form-control(type='text' name='deveui' placeholder='Device EUI' required='true')

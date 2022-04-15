@@ -1,0 +1,18 @@
+extends layout
+
+block content
+
+  h1.
+    123arol Device Checker Result
+
+  h3.
+    Device EUI
+
+  span=deveui
+
+  h3.
+    Last LoRaWAN Join
+
+  div(class='lastjoin')=lastJoin
+
+  a(href='/' class='back') Back
