@@ -10,6 +10,8 @@ Fetch all dependencies:
 $ yarn install
 ```
 
+### Configuration
+
 Create a .env configuration file:
 ```
 NAME=123arol
@@ -27,6 +29,10 @@ ALLOWED_USER is the only user that can login.
 PASSWORD_HASH is a bcrypt hash of a password. This must be created and
 added to .env file before the app is used.
 
+Always restart the application after changing the .env file.
+
+### Start
+
 Start the app in dev mode:
 ```
 $ yarn run dev
@@ -36,12 +42,6 @@ or start the app in production mode:
 ```
 $ yarn run start
 ```
-
-### Configuration
-
-The app's configuration is a .env file as described above.
-
-Always restart the application after changing the .env file.
 
 #### Container mode
 
