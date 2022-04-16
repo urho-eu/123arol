@@ -17,9 +17,14 @@ import createError from 'http-errors';
 import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 import { URL } from 'url';
+import session from 'express-session';
+
+// includes
+import { checkSession } from './includes/auth.js';
 
 // Routes
 import indexRouter from './routes/index.js';
+import loginRouter from './routes/login.js';
 import checkRouter from './routes/check.js';
 
 dotenv.config()
@@ -44,8 +49,15 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// session setup
+app.use(session({
+  secret: process.env.SECRET,
+  cookie: { maxAge: 3600000 } // 1 hour in milliseconds
+}));
+
 // Route handlers
 app.use(indexRouter);
+app.use(loginRouter);
 app.use(checkRouter);
 
 // catch 404 and forward to error handler

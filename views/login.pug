@@ -1,0 +1,22 @@
+extends layout
+
+block content
+
+  h1.
+    123arol Login
+
+  form(method='POST' action='/login')
+
+    div.main
+
+      h3.
+        Username
+
+      input.form-control(type='text' name='username' placeholder='Username' autocomplete='username' required='true')
+
+      h3.
+        Password
+
+      input.form-control(type='password' name='password' placeholder='****' autocomplete='current-password' required='true')
+
+      button(class='login' type='submit') Log In

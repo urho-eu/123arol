@@ -1,0 +1,24 @@
+extends layout
+
+block content
+
+  h1.
+    123arol Device Checker
+
+  div(class='hint').
+    Type in a 16 characters long Device EUI and hit enter.
+    <br/><br/>
+    Only hexadecimal characters are allowed, example: 1437e68af4e03431.
+
+  form(method='POST' action='/check')
+
+    div.main
+
+      h3.
+        Device EUI
+
+      input.form-control(type='text' name='deveui' placeholder='Device EUI' aria-label="16 hexadecimal characters" pattern="[a-fA-F0-9]{16}" required minlength='16' maxlength='16')
+      br
+      span(class='validity')
+
+      button(class='check' type='submit') Check
