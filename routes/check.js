@@ -31,15 +31,20 @@ router.post('/check', checkSession, function(req, res, next) {
     .then(function (response) {
       let device = null;
       let lastJoin = null;
+      let lastActivity = null;
       if (response && response.status === 200) {
         device = response.data.device;
         let date = new Date(Number(device.last_join) * 1000);
         lastJoin = date.toString();
 
+        date = new Date(Number(device.last_activity) * 1000);
+        lastActivity = date.toString();
+
         res.render('result', {
           title: '123arol Result',
           deveui: deveui,
           lastJoin: lastJoin,
+          lastActivity: lastActivity,
           result: JSON.stringify(device)
         });
       } else {
