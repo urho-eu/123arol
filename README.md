@@ -16,13 +16,25 @@ NAME=123arol
 SERVER=localhost
 PORT=3000
 AUTH_TOKEN=01234567890123456789012345678901
+ALLOWED_USER=someuser
+PASSWORD_HASH=$2b$10$Jkfo/5avIk3D.5P7LrnpJeLr8malEqVc4ZqQj.phc67aPuN3J3JG2
 ```
 
 AUTH_TOKEN must be obtained from the network provider.
 
+ALLOWED_USER is the only user that can login.
+
+PASSWORD_HASH is a bcrypt hash of a password. This must be created and
+added to .env file before the app is used.
+
 Start the app in dev mode:
 ```
 $ yarn run dev
+```
+
+or start the app in production mode:
+```
+$ yarn run start
 ```
 
 ### Configuration
